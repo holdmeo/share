@@ -1,0 +1,22 @@
+1.开启代理工具，查看对应代理工具的端口号:
+clash 一般为 7890
+
+SS 一般为 1080
+
+2.打开git终端（windows 系统可打开 powershell 或其 cmd），执行以下命令
+git config --global http.proxy socks5://127.0.0.1:7890
+
+git config --global https.proxy socks5://127.0.0.1:7890
+
+
+3.有时我们需要访问的不是 github 而是国内的码云等代码仓库，使用代理反而很慢，此时更好的方法是只对 github 进行代理，不会影响国内仓库
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
+
+git config --global https.https://github.com.proxy socks5://127.0.0.1:7890
+
+4.git取消代理
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy
+
+原文：https://www.dazhuanlan.com/nan1999/topics/1485392
