@@ -20,3 +20,12 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 
 原文：https://www.dazhuanlan.com/nan1999/topics/1485392
+
+
+当git必须上传大文件时。需借助git-fl
+下载地址：https://git-lfs.github.com/
+使用方式：
+（1）、在项目目录git lfs install。
+（2）、git lfs track '*.rar' 追踪所有后缀为rar的文件
+（3）、git add .gitattributes。
+（4）、配置完成后就可按照平时git方式使用。
