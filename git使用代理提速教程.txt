@@ -1,31 +1,49 @@
 1.开启代理工具，查看对应代理工具的端口号:
 clash 一般为 7890
 
-SS 一般为 1080
+SSR 一般为 1080
 
-2.打开git终端（windows 系统可打开 powershell 或其 cmd），执行以下命令
-git config --global http.proxy socks5://127.0.0.1:7890
+2.打开git终端（windows 系统可打开 powershell 或其 cmd,代理方式可选择http和socks5），执行以下命令
+本地仓库配置：
+git config http.proxy http://127.0.0.1:7890 
+git config https.proxy https://127.0.0.1:7890
 
-git config --global https.proxy socks5://127.0.0.1:7890
+用户仓库配置：
+git config http.proxy http://127.0.0.1:7890 --global
+git config https.proxy https://127.0.0.1:7890 --global
 
+socks5请求方式代理：
+git config http.proxy socks5://127.0.0.1:7890 
+git config https.proxy socks5://127.0.0.1:7890
 
-3.有时我们需要访问的不是 github 而是国内的码云等代码仓库，使用代理反而很慢，此时更好的方法是只对 github 进行代理，不会影响国内仓库
-git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
+3.git使用国内的码云等代码仓库，代理反而更慢，此时更好的方法是只对 github 进行代理，不会影响国内仓库
+git config http.http://github.com.proxy socks5://127.0.0.1:7890 --global
 
-git config --global https.https://github.com.proxy socks5://127.0.0.1:7890
+git config https.https://github.com.proxy socks5://127.0.0.1:7890 --global
 
 4.git取消代理
-git config --global --unset http.proxy
+git config --unset http.proxy --global
 
-git config --global --unset https.proxy
+git config --unset https.proxy --global
 
 原文：https://www.dazhuanlan.com/nan1999/topics/1485392
 
+查询用户的仓库的配置：
+git config --global --list
 
-当git必须上传大文件时。需借助git-fl
+查询本地仓库的配置：
+git config --local --list
+
+git config --global http.sslVerify "false"
+
+设置git缓存大小1GB：
+git config --global http.postBuffer 1048576000
+
+
+git无法上传大于100M的文件,需借助git-lfs,git-lfs无法使用socks5请求方式代理
 下载地址：https://git-lfs.github.com/
 使用方式：
 （1）、在项目目录git lfs install。
-（2）、git lfs track '*.rar' 追踪所有后缀为rar的文件
+（2）、git lfs track '*.rar' 追踪所有后缀为rar的压缩文件
 （3）、git add .gitattributes。
 （4）、配置完成后就可按照平时git方式使用。
