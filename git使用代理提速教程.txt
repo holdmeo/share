@@ -17,9 +17,9 @@ git config http.proxy socks5://127.0.0.1:7890
 git config https.proxy socks5://127.0.0.1:7890
 
 3.git使用国内的码云等代码仓库，代理反而更慢，此时更好的方法是只对 github 进行代理，不会影响国内仓库
-git config http.http://github.com.proxy socks5://127.0.0.1:7890 --global
+git config --global http.http://github.com.proxy http://127.0.0.1:7890 
 
-git config https.https://github.com.proxy socks5://127.0.0.1:7890 --global
+git config --global https.https://github.com.proxy https://127.0.0.1:7890 
 
 4.git取消代理
 git config --unset http.proxy --global
