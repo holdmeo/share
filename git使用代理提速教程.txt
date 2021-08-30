@@ -22,9 +22,9 @@ git config --global http.http://github.com.proxy http://127.0.0.1:7890
 git config --global https.https://github.com.proxy https://127.0.0.1:7890 
 
 4.git取消代理
-git config --unset http.proxy --global
+git config --global --unset http.proxy 
 
-git config --unset https.proxy --global
+git config --global --unset https.proxy 
 
 原文：https://www.dazhuanlan.com/nan1999/topics/1485392
 
@@ -44,6 +44,6 @@ git无法上传大于100M的文件,需借助git-lfs,git-lfs无法使用socks5请求方式代理
 下载地址：https://git-lfs.github.com/
 使用方式：
 （1）、在项目目录git lfs install。
-（2）、git lfs track '*.rar' 追踪所有后缀为rar的压缩文件
+（2）、git lfs track '*.rar' 允许上传后缀为rar的大文件
 （3）、git add .gitattributes。
 （4）、配置完成后就可按照平时git方式使用。
