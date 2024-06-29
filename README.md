@@ -1,6 +1,5 @@
 # 下面电子书在书籍目录中可下载：
-![image](https://github.com/holdmeo/share/assets/41049994/2415d7b9-8520-4bd0-a604-1c4be51104f8)
-
+下载方式：1.打开文件点击下载 2.点击上方:code -> Download zip
 
 1.王小波全集（终结版）（套装全10册）.epub
 
